@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TREND WITH ZAXX - Weather Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <div class="header">
+            <h1>🌤️ TREND WITH ZAXX</h1>
+            <p class="subtitle">Weather Dashboard</p>
+        </div>
+
+        <!-- Search Bar -->
+        <div class="search-section">
+            <div class="search-box">
+                <input 
+                    type="text" 
+                    id="searchInput" 
+                    placeholder="Search city or coordinates..." 
+                    autocomplete="off"
+                >
+                <button id="searchBtn" class="btn-search">🔍 Search</button>
+                <button id="locationBtn" class="btn-location">📍 My Location</button>
+            </div>
+            <div id="suggestions" class="suggestions"></div>
+        </div>
+
+        <!-- Loading State -->
+        <div id="loading" class="loading-spinner" style="display: none;">
+            <div class="spinner"></div>
+            <p>Loading weather data...</p>
+        </div>
+
+        <!-- Error State -->
+        <div id="error" class="error-message" style="display: none;"></div>
+
+        <!-- Main Weather Display -->
+        <div id="weatherContainer" class="weather-container" style="display: none;">
+            <!-- Current Weather -->
+            <div class="current-weather">
+                <div class="weather-icon-large">
+                    <img id="weatherIcon" src="" alt="Weather icon">
+                </div>
+                <div class="weather-info">
+                    <h2 id="cityName">City Name</h2>
+                    <p id="weatherDescription">Weather description</p>
+                    <div class="temperature-display">
+                        <span id="temperature" class="temp">--°C</span>
+                        <div class="temp-range">
+                            <span id="tempMin">Min: --°C</span>
+                            <span id="tempMax">Max: --°C</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Weather Details Grid -->
+            <div class="weather-details">
+                <div class="detail-card">
+                    <h3>💧 Humidity</h3>
+                    <p id="humidity">--%</p>
+                </div>
+                <div class="detail-card">
+                    <h3>💨 Wind Speed</h3>
+                    <p id="windSpeed">-- m/s</p>
+                </div>
+                <div class="detail-card">
+                    <h3>🌡️ Feels Like</h3>
+                    <p id="feelsLike">--°C</p>
+                </div>
+                <div class="detail-card">
+                    <h3>☁️ Cloudiness</h3>
+                    <p id="clouds">--%</p>
+                </div>
+                <div class="detail-card">
+                    <h3>🔽 Pressure</h3>
+                    <p id="pressure">-- hPa</p>
+                </div>
+                <div class="detail-card">
+                    <h3>👁️ Visibility</h3>
+                    <p id="visibility">-- km</p>
+                </div>
+            </div>
+
+            <!-- 5-Day Forecast -->
+            <div class="forecast-section">
+                <h3>📅 5-Day Forecast</h3>
+                <div class="forecast-grid" id="forecastContainer"></div>
+            </div>
+
+            <!-- Additional Info -->
+            <div class="additional-info">
+                <div class="info-card">
+                    <h4>🌅 Sunrise</h4>
+                    <p id="sunrise">--:--</p>
+                </div>
+                <div class="info-card">
+                    <h4>🌇 Sunset</h4>
+                    <p id="sunset">--:--</p>
+                </div>
+                <div class="info-card">
+                    <h4>🌍 Coordinates</h4>
+                    <p id="coordinates">--, --</p>
+                </div>
+                <div class="info-card">
+                    <h4>⏰ Last Updated</h4>
+                    <p id="lastUpdated">--:--</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Welcome Message -->
+        <div id="welcomeMessage" class="welcome-message">
+            <h3>🌍 Welcome to Weather Dashboard</h3>
+            <p>Search for a city or use your current location to get started!</p>
+            <p class="api-credit">Powered by OpenWeatherMap API</p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
