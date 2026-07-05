@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TREND WITH ZAXX - Joke Generator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🎭 TREND WITH ZAXX</h1>
+            <p class="subtitle">Random Joke Generator</p>
+        </div>
+
+        <div class="joke-container">
+            <div class="joke-card">
+                <div class="joke-type" id="jokeType">Loading...</div>
+                <div class="joke-text" id="jokeText">
+                    Click the button to get started! 😄
+                </div>
+                <div class="joke-setup" id="jokeSetup" style="display:none;"></div>
+                <div class="joke-delivery" id="jokeDelivery" style="display:none;"></div>
+            </div>
+        </div>
+
+        <div class="controls">
+            <button id="getJoke" class="btn-primary">Get New Joke 😂</button>
+            <button id="toggleCategory" class="btn-secondary">Filter by Category</button>
+            <button id="copyJoke" class="btn-secondary">Copy Joke 📋</button>
+        </div>
+
+        <div class="stats">
+            <p>Jokes Loaded: <span id="jokeCount">0</span></p>
+            <p>Current Category: <span id="currentCategory">Random</span></p>
+        </div>
+    </div>
+
+    <!-- Category Modal -->
+    <div id="categoryModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Select Joke Category</h2>
+            <div class="category-list" id="categoryList"></div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
